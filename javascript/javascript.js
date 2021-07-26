@@ -51,3 +51,17 @@ function factorial(n) {
 }
 
 // console.log(factorial(4));
+
+//https://www.codewars.com/kata/609eee71109f860006c377d1/train/javascript
+
+function lastSurvivor(letters, coords) {
+  const letterArr = letters.split("")
+  let coordLength = letterArr.length -1
+  for (let i = 0; i < coordLength; i++) {
+    letterArr.splice(coords[i], 1)
+  }
+  const answer = letterArr.join()
+  return answer
+}
+
+// lastSurvivor("abc", [1,1])
