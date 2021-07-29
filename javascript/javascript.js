@@ -65,3 +65,41 @@ function lastSurvivor(letters, coords) {
 }
 
 // lastSurvivor("abc", [1,1])
+
+//https://www.codewars.com/kata/59377c53e66267c8f6000027/train/javascript
+
+function alphabetWar(fight) {
+  let rightSd = 0
+  let leftSd = 0
+
+  const stringArr = fight.split("")
+
+  stringArr.forEach((ele) => {
+    if (ele === "w") {
+      leftSd = leftSd + 4
+    } else if (ele === "p") {
+      leftSd = leftSd + 3
+    } else if (ele === "b") {
+      leftSd = leftSd + 2
+    } else if (ele === "s") {
+      leftSd = leftSd + 1
+    } else if (ele === "m") {
+      rightSd = rightSd + 4
+    } else if (ele === "q") {
+      rightSd = rightSd + 3
+    } else if (ele === "d") {
+      rightSd = rightSd + 2
+    } else if (ele === "z") {
+      rightSd = rightSd + 1
+    }
+  })
+
+  let answer 
+
+  rightSd > leftSd ? answer = "Right side wins!" : leftSd > rightSd ? answer = "Left side wins!" : answer = "Let's fight again!"
+
+  return answer 
+}
+
+
+// console.log(alphabetWar("meow"))
