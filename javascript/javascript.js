@@ -122,5 +122,14 @@ function noSpace(x) {
 
 noSpace("testing 123");
 
-//https://www.codewars.com/kata/57f759bb664021a30300007d
+//https://www.codewars.com/kata/5aa736a455f906981800360d/train/javascript
 
+function feast(beast, dish) {
+	const beastArr = beast.split("")
+	const dishArr = dish.split("")
+	let answer 
+	dishArr[0] === beastArr[0] && dishArr[dishArr.length - 1] === beastArr[beastArr.length - 1] ? answer = true : answer = false
+	return answer 
+  }
+
+feast("chickadee", "chocolate cake")
