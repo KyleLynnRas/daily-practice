@@ -152,7 +152,7 @@ var isSquare = function (n) {
 	if (n >= 0) {
 		let square = Math.sqrt(n);
 		square = Math.round(square);
-		console.log(square);
+
 		let answer;
 		const squareRt = square * square;
 		squareRt === n ? (answer = true) : (answer = false);
@@ -182,3 +182,63 @@ function vaporcode(string) {
 }
 
 vaporcode("meow's today");
+
+//https://leetcode.com/problems/two-sum/
+
+var twoSum = function (nums, target) {
+	const answerArr = [];
+
+	nums.map((ele, index) => {
+		//remove current ele
+		nums.map((e, i) => {
+			if (e + ele === target && answerArr.length === 0) {
+				answerArr.push(index, i);
+			}
+		});
+	});
+
+	// console.log(answerArr);
+};
+
+twoSum([3, 3], 6);
+
+//https://www.hackerrank.com/challenges/js10-let-and-const/problem
+
+function main(r) {
+	// Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
+	const PI = Math.PI;
+	// const r = readLine();
+	// Print the area of the circle:
+	const area = PI * (r * r);
+	console.log(area);
+	// Print the perimeter of the circle:
+	const perim = 2 * (PI * r);
+	console.log(perim);
+}
+
+// main(2.6);
+
+//https://www.codewars.com/kata/5fd8aa5743b49e0012d43e50/train/javascript
+
+function loopArr(arr, direction, steps) {
+	let answer = arr
+
+	if (direction === "left") {
+		//shift
+		for (let i = 0; i < steps; i ++) {
+			let moved = answer.shift()
+			answer.push(moved)
+		}
+		console.log(answer)
+	} else {
+		//pop
+		for (let i = 0; i < steps; i ++) {
+			let moved = answer.pop()
+			//add to front of array 
+			answer.unshift(moved)
+		}
+		console.log(answer)
+	}
+}
+
+// loopArr([1, 5, 87, 45, 8, 8], 'left', 2);
