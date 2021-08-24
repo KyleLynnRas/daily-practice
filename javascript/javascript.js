@@ -221,24 +221,68 @@ function main(r) {
 //https://www.codewars.com/kata/5fd8aa5743b49e0012d43e50/train/javascript
 
 function loopArr(arr, direction, steps) {
-	let answer = arr
+	let answer = arr;
 
 	if (direction === "left") {
 		//shift
-		for (let i = 0; i < steps; i ++) {
-			let moved = answer.shift()
-			answer.push(moved)
+		for (let i = 0; i < steps; i++) {
+			let moved = answer.shift();
+			answer.push(moved);
 		}
-		console.log(answer)
+		console.log(answer);
 	} else {
 		//pop
-		for (let i = 0; i < steps; i ++) {
-			let moved = answer.pop()
-			//add to front of array 
-			answer.unshift(moved)
+		for (let i = 0; i < steps; i++) {
+			let moved = answer.pop();
+			//add to front of array
+			answer.unshift(moved);
 		}
-		console.log(answer)
+		console.log(answer);
 	}
 }
 
 // loopArr([1, 5, 87, 45, 8, 8], 'left', 2);
+
+//https://www.codewars.com/kata/5859c82bd41fc6207900007a/train/javascript
+
+function quotable(name, quote) {
+	const answer = `${name} said: "${quote}"`;
+	return answer;
+}
+
+quotable("Ash", "I choose you Pikachu!");
+
+//https://www.codewars.com/kata/61123a6f2446320021db987d/train/javascript
+
+const prevMultOfThree = (n) => {
+	let numArr = [...`${n}`];
+	// console.log(numArr)
+	//orig bc pop off each time
+	const origLength = numArr.length;
+	console.log(origLength);
+	let finalAnswer;
+	for (let i = 0; i <= origLength; i++) {
+		console.log("i" + i);
+		//length 1
+		if (numArr.length === 1 && numArr[0] % 3 === 0) {
+			finalAnswer = numArr.join("");
+			return parseInt(finalAnswer);
+			//return issue
+		} else if (numArr.length === 1 && numArr[0] % 3 !== 0) {
+			return null;
+			//length 2 +
+		} else {
+			//join to full number
+			let newNum = numArr.join("");
+			console.log(newNum);
+			if (newNum % 3 === 0) {
+				finalAnswer = parseInt(newNum);
+				return finalAnswer;
+			} else {
+				numArr.pop();
+			}
+		}
+	}
+};
+
+// prevMultOfThree(952406);
