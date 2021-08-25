@@ -349,3 +349,35 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 };
 
 zeroFuel(80, 25, 1.5);
+
+//https://www.codewars.com/kata/58649884a1659ed6cb000072/train/javascript
+
+//green -> yellow
+//yellow -> red
+//red -> green
+
+function updateLight(current) {
+	let answer;
+	if (current === "green") {
+		answer = "yellow";
+	} else if (current === "yellow") {
+		answer = "red";
+	} else {
+		answer = "green";
+	}
+	return answer;
+}
+
+updateLight("red");
+
+//https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0/train/javascript
+
+function removeChar(str) {
+	let stringArr = str.split("");
+	stringArr.pop();
+	stringArr.shift();
+	stringArr = stringArr.join("");
+	return stringArr
+}
+
+removeChar("testing");
