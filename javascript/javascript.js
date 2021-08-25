@@ -381,3 +381,19 @@ function removeChar(str) {
 }
 
 removeChar("testing");
+
+//https://www.codewars.com/kata/563e320cee5dddcf77000158/train/javascript
+
+function getAverage(marks){
+	//avg
+	let answer = 0
+	marks.forEach((ele) => {
+		answer = answer + ele
+	})
+	answer = answer / marks.length
+	answer = Math.floor(answer)
+	return answer
+}
+
+getAverage([2,2,2,2])
+
