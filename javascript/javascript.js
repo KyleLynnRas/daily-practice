@@ -286,3 +286,66 @@ const prevMultOfThree = (n) => {
 };
 
 // prevMultOfThree(952406);
+
+//https://www.codewars.com/kata/57a06005cf1fa5fbd5000216/train/javascript
+
+function wordsToSentence(words) {
+	const answer = words.join(" ");
+	return answer;
+}
+
+wordsToSentence(["hello", "world"]);
+
+//https://www.codewars.com/kata/57a0885cbb9944e24c00008e/train/javascript
+
+function removeExclamationMarks(s) {
+	//make arr
+	let stringArr = s.split("");
+	//loop through find ! and remove
+	let answer = stringArr.map((ele) => {
+		if (ele !== "!") {
+			return ele;
+		}
+	});
+
+	answer = answer.join("");
+	return answer;
+}
+
+removeExclamationMarks("Hello all!");
+
+//https://www.codewars.com/kata/574b3b1599d8f897470018f6/train/javascript
+
+function getRealFloor(n) {
+	let answer;
+	if (n <= 12 && n > 0) {
+		answer = n - 1;
+	} else if (n >= 13) {
+		answer = n - 2;
+	} else {
+		answer = n;
+	}
+
+	return answer;
+}
+
+getRealFloor(-3);
+
+//https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/javascript
+function repeatStr(n, s) {
+	let answer;
+	answer = s.repeat(n);
+	return answer;
+}
+
+repeatStr(6, "I");
+
+//https://www.codewars.com/kata/5861d28f124b35723e00005e/train/javascript
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+	let answer;
+	distanceToPump <= mpg * fuelLeft ? (answer = true) : (answer = false);
+	return answer;
+};
+
+zeroFuel(80, 25, 1.5);
