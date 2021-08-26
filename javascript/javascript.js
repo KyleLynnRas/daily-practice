@@ -352,10 +352,6 @@ zeroFuel(80, 25, 1.5);
 
 //https://www.codewars.com/kata/58649884a1659ed6cb000072/train/javascript
 
-//green -> yellow
-//yellow -> red
-//red -> green
-
 function updateLight(current) {
 	let answer;
 	if (current === "green") {
@@ -377,23 +373,44 @@ function removeChar(str) {
 	stringArr.pop();
 	stringArr.shift();
 	stringArr = stringArr.join("");
-	return stringArr
+	return stringArr;
 }
 
 removeChar("testing");
 
 //https://www.codewars.com/kata/563e320cee5dddcf77000158/train/javascript
 
-function getAverage(marks){
+function getAverage(marks) {
 	//avg
-	let answer = 0
+	let answer = 0;
 	marks.forEach((ele) => {
-		answer = answer + ele
-	})
-	answer = answer / marks.length
-	answer = Math.floor(answer)
-	return answer
+		answer = answer + ele;
+	});
+	answer = answer / marks.length;
+	answer = Math.floor(answer);
+	return answer;
 }
 
-getAverage([2,2,2,2])
+getAverage([2, 2, 2, 2]);
 
+//https://www.hackerrank.com/challenges/js10-if-else/problem
+
+function getGrade(score) {
+	let grade;
+
+	score > 25 && score < 30
+		? (grade = "A")
+		: score > 20 && score < 25
+		? (grade = "B")
+		: score > 15 && score < 20
+		? (grade = "C")
+		: score > 10 && score < 15
+		? (grade = "D")
+		: score > 5 && score < 10
+		? (grade = "E")
+		: (grade = "F");
+
+	return grade;
+}
+
+getGrade(11);
