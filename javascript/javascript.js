@@ -183,25 +183,6 @@ function vaporcode(string) {
 
 vaporcode("meow's today");
 
-//https://leetcode.com/problems/two-sum/
-
-var twoSum = function (nums, target) {
-	const answerArr = [];
-
-	nums.map((ele, index) => {
-		//remove current ele
-		nums.map((e, i) => {
-			if (e + ele === target && answerArr.length === 0) {
-				answerArr.push(index, i);
-			}
-		});
-	});
-
-	// console.log(answerArr);
-};
-
-twoSum([3, 3], 6);
-
 //https://www.hackerrank.com/challenges/js10-let-and-const/problem
 
 function main(r) {
@@ -414,3 +395,45 @@ function getGrade(score) {
 }
 
 getGrade(11);
+
+//https://leetcode.com/problems/two-sum/submissions/
+
+var twoSum = function (nums, target) {
+	//return arr of indices of numbers that add up to target
+	const answerArray = [];
+
+	nums.forEach((ele, indx) => {
+		//if array.length > 2 stop
+		if (answerArray.length === 0) {
+			//take ele and add try add it against all others in arr to = target
+			nums.forEach((e, i) => {
+				//make sure not adding to self checking indices aren't same
+				if (e + ele === target && indx !== i) {
+					answerArray.push(indx, i);
+				}
+			});
+			// console.log(answerArray);
+		}
+	});
+	return answerArray;
+};
+
+twoSum([2, 7, 11, 15], 9);
+
+
+// https://leetcode.com/problems/palindrome-number/
+//An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
+
+var isPalindrome = function (x) {
+	let answer;
+	let xString = x.toString();
+
+	let xRev = x.toString().split("");
+	xRev = xRev.reverse();
+	xRev = xRev.join("");
+
+	xString === xRev ? (answer = true) : (answer = false);
+	return answer;
+};
+
+isPalindrome(323);
