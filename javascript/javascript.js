@@ -420,7 +420,6 @@ var twoSum = function (nums, target) {
 
 twoSum([2, 7, 11, 15], 9);
 
-
 // https://leetcode.com/problems/palindrome-number/
 //An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
 
@@ -437,3 +436,87 @@ var isPalindrome = function (x) {
 };
 
 isPalindrome(323);
+
+//https://leetcode.com/problems/roman-to-integer/
+
+var romanToInt = function (s) {
+	let answer = 0;
+	let answerArr = s.split("");
+	//loop through and add up each in arr
+	answerArr.forEach((ele, i) => {
+		//add check here for alt cases
+		if (ele === "I") {
+			//if alt situation, pop out next # from arr so doesn't add number twice
+			answerArr[i + 1] === "V"
+				? ((answer = answer + 4), answerArr.splice(i + 1, 1))
+				: answerArr[i + 1] === "X"
+				? ((answer = answer + 9), answerArr.splice(i + 1, 1))
+				: (answer = answer + 1);
+		} else if (ele === "V") {
+			answer = answer + 5;
+		} else if (ele === "X") {
+			answerArr[i + 1] === "L"
+				? ((answer = answer + 40), answerArr.splice(i + 1, 1))
+				: answerArr[i + 1] === "C"
+				? ((answer = answer + 90), answerArr.splice(i + 1, 1))
+				: (answer = answer + 10);
+		} else if (ele === "L") {
+			answer = answer + 50;
+		} else if (ele === "C") {
+			// console.log(answerArr[i + 1])
+			answerArr[i + 1] === "D"
+				? ((answer = answer + 400), answerArr.splice(i + 1, 1))
+				: answerArr[i + 1] === "M"
+				? ((answer = answer + 900), answerArr.splice(i + 1, 1))
+				: (answer = answer + 100);
+		} else if (ele === "D") {
+			answer = answer + 500;
+		} else if (ele === "M") {
+			answer = answer + 1000;
+		}
+		console.log(answerArr, answer);
+	});
+	console.log(answer);
+};
+
+// romanToInt("DCXXI");
+
+//https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+const removeDuplicates = (nums) => {
+	for(let i=0; i<nums.length; ) {
+        if(nums[i] === nums[i+1]) {
+            nums.splice(i+1, 1);
+        }
+        else {
+            i += 1;
+        }
+        
+    }
+    return nums.length
+};
+				
+// removeDuplicates([0,0,0,0,0])
+
+
+//https://www.codewars.com/kata/5259b20d6021e9e14c0010d4/train/javascript
+
+function reverseWords(str) {
+	let reversed;
+	let newArray = [];
+	reversed = str.split(" ");
+	console.log(reversed)
+	for (var i = 0; i < reversed.length; i++) {
+		newArray.push(reversed[i].split("").reverse().join(""));
+		console.log(newArray)
+	}
+	return newArray.join(" ");
+  }
+  
+// console.log(reverseWords("This is an example!"))
+
+function reverseWords2(str) {
+    return str.split("").reverse().join("").split(" ").reverse().join(" ");
+}
+
+// console.log(reverseWords2("This is an example!"))
+
