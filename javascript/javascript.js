@@ -520,3 +520,15 @@ function reverseWords2(str) {
 
 // console.log(reverseWords2("This is an example!"))
 
+//https://www.codewars.com/kata/59e49b2afc3c494d5d00002a/train/javascript
+
+function vowelChange(str, vow) {
+  let strArr = str.split("")
+  strArr.forEach((e, i) => {
+	  e === "a" || e === "e" || e === "i" || e === "o" ||
+	  e === "u" && e !== vow ? strArr[i] = vow : strArr[i] = strArr[i]
+  })
+  return strArr.join("")
+}
+
+vowelChange("adira wants to go to the park", "o")
