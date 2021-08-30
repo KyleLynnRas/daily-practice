@@ -483,20 +483,17 @@ var romanToInt = function (s) {
 
 //https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 const removeDuplicates = (nums) => {
-	for(let i=0; i<nums.length; ) {
-        if(nums[i] === nums[i+1]) {
-            nums.splice(i+1, 1);
-        }
-        else {
-            i += 1;
-        }
-        
-    }
-    return nums.length
+	for (let i = 0; i < nums.length; ) {
+		if (nums[i] === nums[i + 1]) {
+			nums.splice(i + 1, 1);
+		} else {
+			i += 1;
+		}
+	}
+	return nums.length;
 };
-				
-// removeDuplicates([0,0,0,0,0])
 
+// removeDuplicates([0,0,0,0,0])
 
 //https://www.codewars.com/kata/5259b20d6021e9e14c0010d4/train/javascript
 
@@ -504,18 +501,18 @@ function reverseWords(str) {
 	let reversed;
 	let newArray = [];
 	reversed = str.split(" ");
-	console.log(reversed)
+	console.log(reversed);
 	for (var i = 0; i < reversed.length; i++) {
 		newArray.push(reversed[i].split("").reverse().join(""));
-		console.log(newArray)
+		console.log(newArray);
 	}
 	return newArray.join(" ");
-  }
-  
+}
+
 // console.log(reverseWords("This is an example!"))
 
 function reverseWords2(str) {
-    return str.split("").reverse().join("").split(" ").reverse().join(" ");
+	return str.split("").reverse().join("").split(" ").reverse().join(" ");
 }
 
 // console.log(reverseWords2("This is an example!"))
@@ -523,12 +520,46 @@ function reverseWords2(str) {
 //https://www.codewars.com/kata/59e49b2afc3c494d5d00002a/train/javascript
 
 function vowelChange(str, vow) {
-  let strArr = str.split("")
-  strArr.forEach((e, i) => {
-	  e === "a" || e === "e" || e === "i" || e === "o" ||
-	  e === "u" && e !== vow ? strArr[i] = vow : strArr[i] = strArr[i]
-  })
-  return strArr.join("")
+	let strArr = str.split("");
+	strArr.forEach((e, i) => {
+		e === "a" || e === "e" || e === "i" || e === "o" || (e === "u" && e !== vow)
+			? (strArr[i] = vow)
+			: (strArr[i] = strArr[i]);
+	});
+	return strArr.join("");
 }
 
-vowelChange("adira wants to go to the park", "o")
+vowelChange("adira wants to go to the park", "o");
+
+//https://www.hackerrank.com/challenges/js10-arrays/problem
+
+function getSecondLargest(nums) {
+	const sorted = nums.sort((a, b) => b - a);
+	const largest = nums[0];
+	let answer;
+	//remove duplicates
+	for (let s of sorted) {
+		if (s !== largest) {
+			answer = s;
+			break;
+		}
+	}
+
+	return answer;
+}
+
+getSecondLargest([2, 3, 6, 6, 5]);
+
+
+function reverseString(s) {
+    let answer
+    try {
+        answer = s.split("").reverse().join("")
+    } catch (error) {
+        console.log(error.message)
+		console.log(s)
+    }
+    console.log(answer)
+}
+
+// reverseString("1234")
