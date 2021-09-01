@@ -582,7 +582,7 @@ const multiples = (val, limit) => {
 	console.log(answer);
 };
 
-multiples(5, 25);
+// multiples(5, 25);
 
 //2 - Sort and Star
 /*You will be given a vector of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
@@ -631,3 +631,30 @@ const hasCycle = (list) => {
 
 // console.log(hasCycle([3,2,0,-4]))
 
+//https://leetcode.com/problems/concatenation-of-array/
+
+const getConcatenation = (nums) => {
+	let ans = nums;
+	ans.forEach((e, i) => {
+		ans.push(e);
+	});
+
+	return ans;
+};
+
+getConcatenation([1, 2, 1]);
+
+//https://leetcode.com/problems/length-of-last-word/
+
+const lengthOfLastWord = (s) => {
+	let answer = s.split(" ");
+	let answer1 = answer.filter((e, i) => {
+		return e !== "";
+	});
+
+	answer = answer1[answer1.length - 1].split("").length;
+
+	return answer;
+};
+
+lengthOfLastWord("   fly me   to   the moon  ");
