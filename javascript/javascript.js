@@ -550,16 +550,84 @@ function getSecondLargest(nums) {
 
 getSecondLargest([2, 3, 6, 6, 5]);
 
-
+//
 function reverseString(s) {
-    let answer
-    try {
-        answer = s.split("").reverse().join("")
-    } catch (error) {
-        console.log(error.message)
-		console.log(s)
-    }
-    console.log(answer)
+	let answer;
+	try {
+		answer = s.split("").reverse().join("");
+	} catch (error) {
+		console.log(error.message);
+		console.log(s);
+	}
+	console.log(answer);
 }
 
 // reverseString("1234")
+
+//Code meetup
+/*In this simple exercise, you will build a program that takes a value, integer, and returns a list of its multiples up to another value, limit. If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base.
+
+For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
+*/
+
+const multiples = (val, limit) => {
+	let answer = [];
+	//create arr with #s mult 5 up to 25
+	for (let i = 1; i <= limit; i++) {
+		if (i % 5 === 0) {
+			answer.push(i);
+		}
+	}
+
+	console.log(answer);
+};
+
+multiples(5, 25);
+
+//2 - Sort and Star
+/*You will be given a vector of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+The returned value must be a string, and have "***" between each of its letters.
+
+You should not remove or add elements from/to the array.*/
+
+const twoSort = (arr) => {
+	let answer = arr.sort();
+	answer = answer[0].split("").join("***");
+	return answer;
+};
+
+twoSort([
+	"i",
+	"want",
+	"to",
+	"travel",
+	"the",
+	"world",
+	"writing",
+	"code",
+	"one",
+	"day",
+]);
+
+//3
+
+const hasCycle = (list) => {
+	let turtle = list;
+	let hare = list;
+
+	while (hare && hare.next) {
+		turtle = turtle.next;
+		//speed 2x of turtle
+		hare = hare.next.next;
+		//if cycle
+		if (turtle === hare) {
+			return true;
+		}
+	}
+
+	return false;
+};
+
+// console.log(hasCycle([3,2,0,-4]))
+
