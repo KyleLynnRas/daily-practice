@@ -658,3 +658,41 @@ const lengthOfLastWord = (s) => {
 };
 
 lengthOfLastWord("   fly me   to   the moon  ");
+
+///https://leetcode.com/problems/longest-common-prefix/
+//webdev solution
+const longestCommonPrefix = (strs) => {
+	let answer = "";
+
+	if (strs.length === 0) return answer;
+
+	//loop through all chars in first string
+	for (let i = 0; i < strs[0].length; i++) {
+		//ith char of first element
+		const character = strs[0][i];
+		//loop through rest
+		for (let j = 0; j < strs.length; j++) {
+			// console.log(strs[j][i])
+			if (strs[j][i] !== character) return answer;
+		}
+		//add char matches each loop
+		answer = answer + character;
+	}
+	console.log(answer);
+};
+
+// longestCommonPrefix(["flower","flow","flight"])
+
+//https://www.codewars.com/kata/554b4ac871d6813a03000035/train/javascript
+const highAndLow = (numbers) => {
+	let answerArr = [];
+	//split to array and sort ascending
+	let answer = numbers.split(" ").sort((a, b) => a - b);
+	//add highest/lowest
+	answerArr.push(answer[answer.length - 1], answer[0]);
+	//answer to string with spaces
+	answerArr = answerArr.join(" ");
+	return answerArr;
+};
+
+// console.log(highAndLow("1 9 3 4 -5"));
