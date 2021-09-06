@@ -55,13 +55,12 @@ function factorial(n) {
 //https://www.codewars.com/kata/609eee71109f860006c377d1/train/javascript
 
 function lastSurvivor(letters, coords) {
-	const letterArr = letters.split("");
-	let coordLength = letterArr.length - 1;
-	for (let i = 0; i < coordLength; i++) {
-		letterArr.splice(coords[i], 1);
+	let stringArr = letters.split("");
+	//loop through arr and remove
+	for (let i = 0; i < coords.length; i++) {
+		stringArr.splice(coords[i], 1);
 	}
-	const answer = letterArr.join();
-	return answer;
+	return stringArr.join("");
 }
 
 // lastSurvivor("abc", [1,1])
@@ -110,14 +109,7 @@ function alphabetWar(fight) {
 //https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/javascript
 
 function noSpace(x) {
-	let newString = x.split("");
-	let stringArr = newString.filter((ele) => {
-		if (ele !== " ") {
-			return ele;
-		}
-	});
-	const answer = stringArr.join("");
-	return answer;
+	return x.split(" ").join("");
 }
 
 noSpace("testing 123");
@@ -145,6 +137,13 @@ class SmallestIntegerFinder {
 		return answer;
 	}
 }
+
+//class SmallestIntegerFinder {
+// findSmallestInt(args) {
+// 	let smallest = args.sort((a, b) => a -b)
+// 	return smallest[0]
+//   }
+// }
 
 //https://www.codewars.com/kata/54c27a33fb7da0db0100040e/train/javascript
 
@@ -423,15 +422,12 @@ twoSum([2, 7, 11, 15], 9);
 // https://leetcode.com/problems/palindrome-number/
 //An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
 
-var isPalindrome = function (x) {
+const isPalindrome = (x) => {
 	let answer;
 	let xString = x.toString();
+	let revX = xString.split("").reverse().join("");
 
-	let xRev = x.toString().split("");
-	xRev = xRev.reverse();
-	xRev = xRev.join("");
-
-	xString === xRev ? (answer = true) : (answer = false);
+	xString === revX ? (answer = true) : (answer = false);
 	return answer;
 };
 
@@ -696,3 +692,34 @@ const highAndLow = (numbers) => {
 };
 
 // console.log(highAndLow("1 9 3 4 -5"));
+
+//https://www.hackerrank.com/challenges/simple-array-sum/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
+
+const simpleArraySum = (ar) => {
+	let total = 0;
+	ar.forEach((e) => {
+		total = total + e;
+		return total;
+	});
+	console.log(total);
+};
+
+// simpleArraySum([1,2,3,4,10,11])
+
+const compareTriplets = (a, b) => {
+	let aScore = 0;
+	let bScore = 0;
+	let answer = [];
+	for (let i = 0; i < a.length; i++) {
+		if (a[i] > b[i]) {
+			aScore += 1;
+		} else if (b[i] > a[i]) {
+			bScore += 1;
+		}
+	}
+
+	answer.push(aScore, bScore);
+	return answer;
+};
+
+// compareTriplets([5, 6, 7], [3, 6, 10]);
