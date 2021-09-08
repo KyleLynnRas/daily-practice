@@ -820,3 +820,29 @@ const isPositive = (a) => {
 };
 
 // isPositive([1, 2, 3, 0]);
+
+//https://www.hackerrank.com/challenges/a-very-big-sum/problem
+
+const veryBigSum = (ar) => {
+	let answer = ar.reduce((a, b) => a + b);
+	return answer;
+};
+
+// veryBigSum([1000000001 ,1000000002 ,1000000003 ,1000000004 ,1000000005])
+
+//https://www.hackerrank.com/challenges/birthday-cake-candles/problem
+
+const birthdayCakeCandles = (candles) => {
+	candles = candles.sort((a, b) => b - a);
+	let count = 0;
+	candles.forEach((e, i) => {
+		if (e === candles[0]) {
+			count = count + 1;
+		} else {
+			return count;
+		}
+	});
+	return count;
+};
+
+// console.log(birthdayCakeCandles([3,2,1,3]))
