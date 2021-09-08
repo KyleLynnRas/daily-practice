@@ -668,13 +668,13 @@ const longestCommonPrefix = (strs) => {
 		const character = strs[0][i];
 		//loop through rest
 		for (let j = 0; j < strs.length; j++) {
-			// console.log(strs[j][i])
+			console.log(strs[j][i]);
 			if (strs[j][i] !== character) return answer;
 		}
 		//add char matches each loop
 		answer = answer + character;
 	}
-	console.log(answer);
+	// console.log(answer);
 };
 
 // longestCommonPrefix(["flower","flow","flight"])
@@ -723,3 +723,100 @@ const compareTriplets = (a, b) => {
 };
 
 // compareTriplets([5, 6, 7], [3, 6, 10]);
+
+//binary search with sorted arr
+const searchInsert = (nums, target) => {
+	//beg and end arr
+	let low = 0;
+	let high = nums.length - 1;
+
+	while (low <= high) {
+		//find middle
+		const middle = Math.floor((low + high) / 2);
+		//compare
+		if (nums[middle] === target) {
+			//found target, exit & return index
+			return middle;
+		} else if (nums[middle] < target) {
+			//continue search to right
+			low += 1;
+		} else {
+			//search to left
+			high -= 1;
+		}
+	}
+
+	//if target not found
+	return low;
+};
+
+// console.log(searchInsert([1, 3, 4, 6], 2));
+
+//https://www.codewars.com/kata/57741d8f10a0a66915000001/solutions/javascript
+function intDiff(arr, n) {
+	let difference = 0;
+	let count = 0;
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = i; j < arr.length; j++) {
+			difference = Math.abs(arr[j] - arr[i]);
+			if (difference === n && i !== j) {
+				count += 1;
+			}
+		}
+	}
+	return count;
+}
+
+// console.log(intDiff([1,1,3,3], 2))
+
+//https://www.codewars.com/kata/5b6b128783d648c4c4000129/train/javascript
+
+const smallestProduct = (arr) => {
+	let sum = [];
+	for (let i = 0; i < arr.length; i++) {
+		sum.push(arr[i].reduce((a, b) => a * b));
+	}
+	return Math.min(...sum);
+};
+
+// smallestProduct([[1, 5, 2], [2], [-1, -3]]);
+
+//https://www.codewars.com/kata/5650ab06d11d675371000003/solutions/javascript
+
+const splitInParts = (s, partLength) => {
+	sArr = s.split("");
+	//insert space every 3
+	for (let i = partLength; i < sArr.length; i += partLength + 1) {
+		sArr.splice(i, 0, " ");
+	}
+	return sArr.join("");
+};
+
+// console.log(splitInParts("HelloKata", 1));
+
+//https://www.hackerrank.com/challenges/staircase/problem
+
+const staircase = (n) => {
+	for (let i = 1; i <= n; i++) {
+		//print one string per loop
+		let spaces = n - i;
+		let string = "";
+		string = string + " ".repeat(spaces);
+		string = string + "#".repeat(i);
+		console.log(string);
+	}
+};
+
+// console.log(staircase(4))
+
+const isPositive = (a) => {
+	if (a > 0) {
+		return "YES";
+	} else if (a == 0) {
+		throw new Error("Zero Error");
+	} else if (a < 0) {
+		throw new Error("Negative Error");
+	}
+};
+
+// isPositive([1, 2, 3, 0]);
