@@ -887,3 +887,26 @@ const plusMinus = (arr) => {
 };
 
 // plusMinus([-4, 3, -9, 0, 4, 1])
+
+//https://www.hackerrank.com/challenges/mini-max-sum/problem?h_r=next-challenge&h_v=zen
+
+const miniMaxSum = (arr) => {
+	let sorted = arr.sort((a, b) => a - b);
+	let answerArr = [];
+	//print min
+	let min = 0;
+	for (let i = 0; i <= 3; i++) {
+		min += sorted[i];
+	}
+	answerArr.push(min);
+
+	let max = 0;
+	for (let i = 1; i <= arr.length - 1; i++) {
+		max += sorted[i];
+	}
+	answerArr.push(max);
+
+	console.log(answerArr.splice('').join(' '));
+};
+
+// miniMaxSum([1,2, 3, 4, 5])
