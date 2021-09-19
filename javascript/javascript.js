@@ -3,16 +3,16 @@
 function vowelsAndConsonants(s) {
 	//make everything lowercase
 	const string = s.toLowerCase();
-	const stringArr = string.split("");
+	const stringArr = string.split('');
 	//log each vowel
 	let consArr = [];
 	stringArr.forEach((ele) => {
 		if (
-			ele === "a" ||
-			ele === "e" ||
-			ele === "i" ||
-			ele === "o" ||
-			ele === "u"
+			ele === 'a' ||
+			ele === 'e' ||
+			ele === 'i' ||
+			ele === 'o' ||
+			ele === 'u'
 		) {
 			console.log(ele);
 		} else {
@@ -55,12 +55,12 @@ function factorial(n) {
 //https://www.codewars.com/kata/609eee71109f860006c377d1/train/javascript
 
 function lastSurvivor(letters, coords) {
-	let stringArr = letters.split("");
+	let stringArr = letters.split('');
 	//loop through arr and remove
 	for (let i = 0; i < coords.length; i++) {
 		stringArr.splice(coords[i], 1);
 	}
-	return stringArr.join("");
+	return stringArr.join('');
 }
 
 // lastSurvivor("abc", [1,1])
@@ -71,24 +71,24 @@ function alphabetWar(fight) {
 	let rightSd = 0;
 	let leftSd = 0;
 
-	const stringArr = fight.split("");
+	const stringArr = fight.split('');
 
 	stringArr.forEach((ele) => {
-		if (ele === "w") {
+		if (ele === 'w') {
 			leftSd = leftSd + 4;
-		} else if (ele === "p") {
+		} else if (ele === 'p') {
 			leftSd = leftSd + 3;
-		} else if (ele === "b") {
+		} else if (ele === 'b') {
 			leftSd = leftSd + 2;
-		} else if (ele === "s") {
+		} else if (ele === 's') {
 			leftSd = leftSd + 1;
-		} else if (ele === "m") {
+		} else if (ele === 'm') {
 			rightSd = rightSd + 4;
-		} else if (ele === "q") {
+		} else if (ele === 'q') {
 			rightSd = rightSd + 3;
-		} else if (ele === "d") {
+		} else if (ele === 'd') {
 			rightSd = rightSd + 2;
-		} else if (ele === "z") {
+		} else if (ele === 'z') {
 			rightSd = rightSd + 1;
 		}
 	});
@@ -96,9 +96,9 @@ function alphabetWar(fight) {
 	let answer;
 
 	rightSd > leftSd
-		? (answer = "Right side wins!")
+		? (answer = 'Right side wins!')
 		: leftSd > rightSd
-		? (answer = "Left side wins!")
+		? (answer = 'Left side wins!')
 		: (answer = "Let's fight again!");
 
 	return answer;
@@ -109,16 +109,16 @@ function alphabetWar(fight) {
 //https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/javascript
 
 function noSpace(x) {
-	return x.split(" ").join("");
+	return x.split(' ').join('');
 }
 
-noSpace("testing 123");
+noSpace('testing 123');
 
 //https://www.codewars.com/kata/5aa736a455f906981800360d/train/javascript
 
 function feast(beast, dish) {
-	const beastArr = beast.split("");
-	const dishArr = dish.split("");
+	const beastArr = beast.split('');
+	const dishArr = dish.split('');
 	let answer;
 	dishArr[0] === beastArr[0] &&
 	dishArr[dishArr.length - 1] === beastArr[beastArr.length - 1]
@@ -127,7 +127,7 @@ function feast(beast, dish) {
 	return answer;
 }
 
-feast("chickadee", "chocolate cake");
+feast('chickadee', 'chocolate cake');
 
 //https://www.codewars.com/kata/55a2d7ebe362935a210000b2/train/javascript
 
@@ -168,15 +168,15 @@ isSquare(25);
 function vaporcode(string) {
 	//to uppercase
 	let vaporString = string.toUpperCase();
-	vaporString = vaporString.split("");
+	vaporString = vaporString.split('');
 
 	vaporString.map((ele, index) => {
-		if (ele === " ") {
+		if (ele === ' ') {
 			vaporString.splice(index, 1);
 		}
 	});
 
-	vaporString = vaporString.join("  ");
+	vaporString = vaporString.join('  ');
 	return vaporString;
 }
 
@@ -203,7 +203,7 @@ function main(r) {
 function loopArr(arr, direction, steps) {
 	let answer = arr;
 
-	if (direction === "left") {
+	if (direction === 'left') {
 		//shift
 		for (let i = 0; i < steps; i++) {
 			let moved = answer.shift();
@@ -230,7 +230,7 @@ function quotable(name, quote) {
 	return answer;
 }
 
-quotable("Ash", "I choose you Pikachu!");
+quotable('Ash', 'I choose you Pikachu!');
 
 //https://www.codewars.com/kata/61123a6f2446320021db987d/train/javascript
 
@@ -242,10 +242,10 @@ const prevMultOfThree = (n) => {
 	console.log(origLength);
 	let finalAnswer;
 	for (let i = 0; i <= origLength; i++) {
-		console.log("i" + i);
+		console.log('i' + i);
 		//length 1
 		if (numArr.length === 1 && numArr[0] % 3 === 0) {
-			finalAnswer = numArr.join("");
+			finalAnswer = numArr.join('');
 			return parseInt(finalAnswer);
 			//return issue
 		} else if (numArr.length === 1 && numArr[0] % 3 !== 0) {
@@ -253,7 +253,7 @@ const prevMultOfThree = (n) => {
 			//length 2 +
 		} else {
 			//join to full number
-			let newNum = numArr.join("");
+			let newNum = numArr.join('');
 			console.log(newNum);
 			if (newNum % 3 === 0) {
 				finalAnswer = parseInt(newNum);
@@ -270,29 +270,29 @@ const prevMultOfThree = (n) => {
 //https://www.codewars.com/kata/57a06005cf1fa5fbd5000216/train/javascript
 
 function wordsToSentence(words) {
-	const answer = words.join(" ");
+	const answer = words.join(' ');
 	return answer;
 }
 
-wordsToSentence(["hello", "world"]);
+wordsToSentence(['hello', 'world']);
 
 //https://www.codewars.com/kata/57a0885cbb9944e24c00008e/train/javascript
 
 function removeExclamationMarks(s) {
 	//make arr
-	let stringArr = s.split("");
+	let stringArr = s.split('');
 	//loop through find ! and remove
 	let answer = stringArr.map((ele) => {
-		if (ele !== "!") {
+		if (ele !== '!') {
 			return ele;
 		}
 	});
 
-	answer = answer.join("");
+	answer = answer.join('');
 	return answer;
 }
 
-removeExclamationMarks("Hello all!");
+removeExclamationMarks('Hello all!');
 
 //https://www.codewars.com/kata/574b3b1599d8f897470018f6/train/javascript
 
@@ -318,7 +318,7 @@ function repeatStr(n, s) {
 	return answer;
 }
 
-repeatStr(6, "I");
+repeatStr(6, 'I');
 
 //https://www.codewars.com/kata/5861d28f124b35723e00005e/train/javascript
 
@@ -334,29 +334,29 @@ zeroFuel(80, 25, 1.5);
 
 function updateLight(current) {
 	let answer;
-	if (current === "green") {
-		answer = "yellow";
-	} else if (current === "yellow") {
-		answer = "red";
+	if (current === 'green') {
+		answer = 'yellow';
+	} else if (current === 'yellow') {
+		answer = 'red';
 	} else {
-		answer = "green";
+		answer = 'green';
 	}
 	return answer;
 }
 
-updateLight("red");
+updateLight('red');
 
 //https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0/train/javascript
 
 function removeChar(str) {
-	let stringArr = str.split("");
+	let stringArr = str.split('');
 	stringArr.pop();
 	stringArr.shift();
-	stringArr = stringArr.join("");
+	stringArr = stringArr.join('');
 	return stringArr;
 }
 
-removeChar("testing");
+removeChar('testing');
 
 //https://www.codewars.com/kata/563e320cee5dddcf77000158/train/javascript
 
@@ -379,16 +379,16 @@ function getGrade(score) {
 	let grade;
 
 	score > 25 && score < 30
-		? (grade = "A")
+		? (grade = 'A')
 		: score > 20 && score < 25
-		? (grade = "B")
+		? (grade = 'B')
 		: score > 15 && score < 20
-		? (grade = "C")
+		? (grade = 'C')
 		: score > 10 && score < 15
-		? (grade = "D")
+		? (grade = 'D')
 		: score > 5 && score < 10
-		? (grade = "E")
-		: (grade = "F");
+		? (grade = 'E')
+		: (grade = 'F');
 
 	return grade;
 }
@@ -425,7 +425,7 @@ twoSum([2, 7, 11, 15], 9);
 const isPalindrome = (x) => {
 	let answer;
 	let xString = x.toString();
-	let revX = xString.split("").reverse().join("");
+	let revX = xString.split('').reverse().join('');
 
 	xString === revX ? (answer = true) : (answer = false);
 	return answer;
@@ -437,37 +437,37 @@ isPalindrome(323);
 
 var romanToInt = function (s) {
 	let answer = 0;
-	let answerArr = s.split("");
+	let answerArr = s.split('');
 	//loop through and add up each in arr
 	answerArr.forEach((ele, i) => {
 		//add check here for alt cases
-		if (ele === "I") {
+		if (ele === 'I') {
 			//if alt situation, pop out next # from arr so doesn't add number twice
-			answerArr[i + 1] === "V"
+			answerArr[i + 1] === 'V'
 				? ((answer = answer + 4), answerArr.splice(i + 1, 1))
-				: answerArr[i + 1] === "X"
+				: answerArr[i + 1] === 'X'
 				? ((answer = answer + 9), answerArr.splice(i + 1, 1))
 				: (answer = answer + 1);
-		} else if (ele === "V") {
+		} else if (ele === 'V') {
 			answer = answer + 5;
-		} else if (ele === "X") {
-			answerArr[i + 1] === "L"
+		} else if (ele === 'X') {
+			answerArr[i + 1] === 'L'
 				? ((answer = answer + 40), answerArr.splice(i + 1, 1))
-				: answerArr[i + 1] === "C"
+				: answerArr[i + 1] === 'C'
 				? ((answer = answer + 90), answerArr.splice(i + 1, 1))
 				: (answer = answer + 10);
-		} else if (ele === "L") {
+		} else if (ele === 'L') {
 			answer = answer + 50;
-		} else if (ele === "C") {
+		} else if (ele === 'C') {
 			// console.log(answerArr[i + 1])
-			answerArr[i + 1] === "D"
+			answerArr[i + 1] === 'D'
 				? ((answer = answer + 400), answerArr.splice(i + 1, 1))
-				: answerArr[i + 1] === "M"
+				: answerArr[i + 1] === 'M'
 				? ((answer = answer + 900), answerArr.splice(i + 1, 1))
 				: (answer = answer + 100);
-		} else if (ele === "D") {
+		} else if (ele === 'D') {
 			answer = answer + 500;
-		} else if (ele === "M") {
+		} else if (ele === 'M') {
 			answer = answer + 1000;
 		}
 		console.log(answerArr, answer);
@@ -496,19 +496,19 @@ const removeDuplicates = (nums) => {
 function reverseWords(str) {
 	let reversed;
 	let newArray = [];
-	reversed = str.split(" ");
+	reversed = str.split(' ');
 	console.log(reversed);
 	for (var i = 0; i < reversed.length; i++) {
-		newArray.push(reversed[i].split("").reverse().join(""));
+		newArray.push(reversed[i].split('').reverse().join(''));
 		console.log(newArray);
 	}
-	return newArray.join(" ");
+	return newArray.join(' ');
 }
 
 // console.log(reverseWords("This is an example!"))
 
 function reverseWords2(str) {
-	return str.split("").reverse().join("").split(" ").reverse().join(" ");
+	return str.split('').reverse().join('').split(' ').reverse().join(' ');
 }
 
 // console.log(reverseWords2("This is an example!"))
@@ -516,16 +516,16 @@ function reverseWords2(str) {
 //https://www.codewars.com/kata/59e49b2afc3c494d5d00002a/train/javascript
 
 function vowelChange(str, vow) {
-	let strArr = str.split("");
+	let strArr = str.split('');
 	strArr.forEach((e, i) => {
-		e === "a" || e === "e" || e === "i" || e === "o" || (e === "u" && e !== vow)
+		e === 'a' || e === 'e' || e === 'i' || e === 'o' || (e === 'u' && e !== vow)
 			? (strArr[i] = vow)
 			: (strArr[i] = strArr[i]);
 	});
-	return strArr.join("");
+	return strArr.join('');
 }
 
-vowelChange("adira wants to go to the park", "o");
+vowelChange('adira wants to go to the park', 'o');
 
 //https://www.hackerrank.com/challenges/js10-arrays/problem
 
@@ -550,7 +550,7 @@ getSecondLargest([2, 3, 6, 6, 5]);
 function reverseString(s) {
 	let answer;
 	try {
-		answer = s.split("").reverse().join("");
+		answer = s.split('').reverse().join('');
 	} catch (error) {
 		console.log(error.message);
 		console.log(s);
@@ -589,21 +589,21 @@ You should not remove or add elements from/to the array.*/
 
 const twoSort = (arr) => {
 	let answer = arr.sort();
-	answer = answer[0].split("").join("***");
+	answer = answer[0].split('').join('***');
 	return answer;
 };
 
 twoSort([
-	"i",
-	"want",
-	"to",
-	"travel",
-	"the",
-	"world",
-	"writing",
-	"code",
-	"one",
-	"day",
+	'i',
+	'want',
+	'to',
+	'travel',
+	'the',
+	'world',
+	'writing',
+	'code',
+	'one',
+	'day',
 ]);
 
 //3
@@ -643,22 +643,22 @@ getConcatenation([1, 2, 1]);
 //https://leetcode.com/problems/length-of-last-word/
 
 const lengthOfLastWord = (s) => {
-	let answer = s.split(" ");
+	let answer = s.split(' ');
 	let answer1 = answer.filter((e, i) => {
-		return e !== "";
+		return e !== '';
 	});
 
-	answer = answer1[answer1.length - 1].split("").length;
+	answer = answer1[answer1.length - 1].split('').length;
 
 	return answer;
 };
 
-lengthOfLastWord("   fly me   to   the moon  ");
+lengthOfLastWord('   fly me   to   the moon  ');
 
 ///https://leetcode.com/problems/longest-common-prefix/
 //webdev solution
 const longestCommonPrefix = (strs) => {
-	let answer = "";
+	let answer = '';
 
 	if (strs.length === 0) return answer;
 
@@ -683,11 +683,11 @@ const longestCommonPrefix = (strs) => {
 const highAndLow = (numbers) => {
 	let answerArr = [];
 	//split to array and sort ascending
-	let answer = numbers.split(" ").sort((a, b) => a - b);
+	let answer = numbers.split(' ').sort((a, b) => a - b);
 	//add highest/lowest
 	answerArr.push(answer[answer.length - 1], answer[0]);
 	//answer to string with spaces
-	answerArr = answerArr.join(" ");
+	answerArr = answerArr.join(' ');
 	return answerArr;
 };
 
@@ -784,12 +784,12 @@ const smallestProduct = (arr) => {
 //https://www.codewars.com/kata/5650ab06d11d675371000003/solutions/javascript
 
 const splitInParts = (s, partLength) => {
-	sArr = s.split("");
+	sArr = s.split('');
 	//insert space every 3
 	for (let i = partLength; i < sArr.length; i += partLength + 1) {
-		sArr.splice(i, 0, " ");
+		sArr.splice(i, 0, ' ');
 	}
-	return sArr.join("");
+	return sArr.join('');
 };
 
 // console.log(splitInParts("HelloKata", 1));
@@ -800,9 +800,9 @@ const staircase = (n) => {
 	for (let i = 1; i <= n; i++) {
 		//print one string per loop
 		let spaces = n - i;
-		let string = "";
-		string = string + " ".repeat(spaces);
-		string = string + "#".repeat(i);
+		let string = '';
+		string = string + ' '.repeat(spaces);
+		string = string + '#'.repeat(i);
 		console.log(string);
 	}
 };
@@ -811,11 +811,11 @@ const staircase = (n) => {
 
 const isPositive = (a) => {
 	if (a > 0) {
-		return "YES";
+		return 'YES';
 	} else if (a == 0) {
-		throw new Error("Zero Error");
+		throw new Error('Zero Error');
 	} else if (a < 0) {
-		throw new Error("Negative Error");
+		throw new Error('Negative Error');
 	}
 };
 
@@ -846,3 +846,44 @@ const birthdayCakeCandles = (candles) => {
 };
 
 // console.log(birthdayCakeCandles([3,2,1,3]))
+
+const strStr = (haystack, needle) => {
+	let answer;
+	if (haystack === null) {
+		answer = 0;
+		return answer;
+	}
+
+	answer = haystack.indexOf(needle);
+	return answer;
+};
+
+// console.log(strStr('hello', 'llll'));
+
+//https://www.hackerrank.com/challenges/plus-minus/problem
+
+const plusMinus = (arr) => {
+	let length = arr.length;
+	let pos = 0;
+	let neg = 0;
+	let zero = 0;
+
+	arr.forEach((e) => {
+		if (e === 0) {
+			zero += 1;
+		} else if (e !== Math.abs(e)) {
+			neg += 1;
+		} else {
+			pos += 1;
+		}
+	});
+
+	pos = pos / length;
+	console.log(pos.toFixed(6));
+	neg = neg / length;
+	console.log(neg.toFixed(6));
+	zero = zero / length;
+	console.log(zero.toFixed(6));
+};
+
+// plusMinus([-4, 3, -9, 0, 4, 1])
