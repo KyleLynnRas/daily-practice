@@ -911,19 +911,42 @@ const miniMaxSum = (arr) => {
 
 // miniMaxSum([1,2, 3, 4, 5])
 
-//https://leetcode.com/problems/remove-element/submissions/
+//
 
-const removeElement = (nums, val) => {
-	
-	for (let i = 0; i < nums.length; i++) {
-		
-		if (nums[i] === val) {
-			nums.splice(i, 1)
-			i--
+const lastDigits = (n, d) => {
+	//if d bigger then n.length return all
+	//if d less or equal to 0 return empty list
+	let answer = [];
+	if (d > n.length) {
+		console.log('first');
+		console.log(n);
+	} else if (d <= 0) {
+		console.log(d);
+		console.log(answer);
+	} else {
+		//how find where d is?
+		for (let i = n.length; i < d; i--) {
+			answer.push(n[i]);
+		}
+		console.log(answer);
+	}
+};
+
+// lastDigits([1,2,3,4], 2)
+
+//https://leetcode.com/problems/search-insert-position/
+
+const searchInsert2 = (nums, target) => {
+	for (let i = 0; i <= nums.length; i++) {
+		if (nums[i] === target) {
+			return i;
+		} else if (target > nums[nums.length - 1]) {
+			return nums.length;
+		} else if (nums[i] > target) {
+			return i;
 		}
 	}
+};
 
-	return nums.length
-}
+// console.log(searchInsert2([1,3,5,6], 7))
 
-console.log((removeElement([3,2,2,3], 3)))
