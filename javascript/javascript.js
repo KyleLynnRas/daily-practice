@@ -950,3 +950,25 @@ const searchInsert2 = (nums, target) => {
 
 // console.log(searchInsert2([1,3,5,6], 7))
 
+//https://leetcode.com/problems/single-number/
+
+const singleNumber = (nums) => {
+	nums.sort();
+
+	let answer;
+	for (let i = 0; i < nums.length; ) {
+		if (i === nums.length - 1) {
+			answer = nums[i];
+			return answer;
+		}
+		if (nums[i] === nums[i + 1]) {
+			i += 2;
+		} else {
+			answer = nums[i];
+			return answer;
+		}
+	}
+	return answer;
+};
+
+singleNumber([2, 2, 1]);
