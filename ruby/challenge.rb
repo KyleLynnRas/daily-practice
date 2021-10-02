@@ -28,4 +28,29 @@ def single_number nums
  p answer
 end 
 
-single_number [1]
+# single_number [1]
+
+#https://leetcode.com/problems/palindrome-number/
+
+def isPalindrome x
+  answer = true
+  str_x = x.to_s
+  if str_x != str_x.reverse 
+    answer = false
+  end
+  p answer
+end
+
+# isPalindrome 21
+
+#https://leetcode.com/problems/length-of-last-word/
+
+def last_word s 
+  sArr = s.split(" ")
+  answer = 0
+  answerArr = sArr.filter{|sA| sA != ""}
+  answer = answerArr[answerArr.length - 1].length
+  answer
+end
+
+# p last_word "   fly me   to   the moon  "
