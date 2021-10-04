@@ -50,7 +50,17 @@ def last_word s
   answer = 0
   answerArr = sArr.filter{|sA| sA != ""}
   answer = answerArr[answerArr.length - 1].length
-  answer
+  p answer
 end
 
 # p last_word "   fly me   to   the moon  "
+
+#https://leetcode.com/problems/sqrtx/
+
+def my_sqrt x
+	answer = Math.sqrt(x)
+  answer = answer.floor
+	p answer
+end
+
+# my_sqrt(8)
