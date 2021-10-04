@@ -971,4 +971,30 @@ const singleNumber = (nums) => {
 	return answer;
 };
 
-singleNumber([2, 2, 1]);
+// singleNumber([2, 2, 1])
+
+//https://leetcode.com/problems/sqrtx/
+
+const mySqrt = (x) => {
+	let answer = Math.sqrt(x);
+	answer = Math.floor(answer);
+	console.log(answer);
+};
+
+// mySqrt(8)
+
+//https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+const maxProfit = (prices) => {
+	let lowestDay = prices[0]
+	let profit = 0
+	for (let i = 0; i < prices.length; i++) {
+		//return lowest 
+		lowestDay = Math.min(lowestDay, prices[i])
+		//return highest
+		profit = Math.max(profit, prices[i] - lowestDay)
+	}
+	console.log(profit)
+};
+
+// maxProfit([2,4,1]);
