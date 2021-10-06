@@ -986,15 +986,107 @@ const mySqrt = (x) => {
 //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 const maxProfit = (prices) => {
-	let lowestDay = prices[0]
-	let profit = 0
+	let lowestDay = prices[0];
+	let profit = 0;
 	for (let i = 0; i < prices.length; i++) {
-		//return lowest 
-		lowestDay = Math.min(lowestDay, prices[i])
+		//return lowest
+		lowestDay = Math.min(lowestDay, prices[i]);
 		//return highest
-		profit = Math.max(profit, prices[i] - lowestDay)
+		profit = Math.max(profit, prices[i] - lowestDay);
 	}
-	console.log(profit)
+	console.log(profit);
 };
 
 // maxProfit([2,4,1]);
+
+//https://www.hackerrank.com/challenges/one-week-preparation-kit-plus-minus/problem?h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-one
+
+const plusMinus2 = (arr) => {
+	let positive = 0;
+	let negative = 0;
+	let zero = 0;
+
+	arr.forEach((e, i) => {
+		e === 0 ? (zero += 1) : e < 0 ? (negative += 1) : (positive += 1);
+	});
+
+	positive = positive / arr.length;
+	console.log(positive.toFixed(6));
+	negative = negative / arr.length;
+	console.log(negative.toFixed(6));
+	zero = zero / arr.length;
+	console.log(zero.toFixed(6));
+};
+
+// plusMinus2([1, 1, 0, -1, -1])
+
+//https://www.hackerrank.com/challenges/one-week-preparation-kit-mini-max-sum/problem?h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-one&h_r=next-challenge&h_v=zen
+
+const miniMaxSum2 = (arr) => {
+	let max = arr[0];
+	let min = arr[0];
+	let totalSum = 0;
+
+	//find min/max and sum
+	for (let i = 0; i < arr.length; i++) {
+		//find max
+		if (max < arr[i]) {
+			max = arr[i];
+		}
+		if (min > arr[i]) {
+			min = arr[i];
+		}
+		totalSum += arr[i];
+	}
+
+	//max sum, subtract lowest # left with highest 4
+	let maxSum = totalSum - min;
+	let minSum = totalSum - max;
+
+	console.log(minSum + '' + maxSum);
+};
+
+// miniMaxSum2([1,2 ,3 ,4 ,5])
+
+//https://www.hackerrank.com/challenges/one-week-preparation-kit-time-conversion/problem?h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-one&h_r=next-challenge&h_v=zen&page=2&h_r=next-challenge&h_v=zen
+
+const timeConversion = (s) => {
+	let sArr = s.split(':');
+	let first = sArr[0];
+	let timeOfDay = sArr[2].split('');
+	timeOfDay = timeOfDay[2];
+
+	//if midnight
+	if (timeOfDay === 'A' && first === '12') {
+		sArr.splice(0, 1, '00');
+	} else if (timeOfDay === 'P' && first !== '12') {
+		let toChange = sArr.splice(0, 1);
+
+		// 01-09
+		if (parseInt(toChange) < 10) {
+			console.log('yep');
+			toChange = toChange.join('').split('');
+			toChange.splice(0, 1);
+			toChange = parseInt(toChange) + 12;
+			toChange = toChange.toString();
+			sArr.unshift(toChange);
+
+			//10-11
+		} else {
+			toChange = parseInt(toChange) + 12;
+			sArr.unshift(toChange.toString());
+		}
+	}
+
+	//remove am/pm
+	let amPm = sArr[2].split('');
+	amPm.splice(2, 2);
+	amPm = amPm.join('');
+	sArr.splice(2, 1, amPm);
+
+	//final answer
+	const answer = sArr.join(':');
+	return answer;
+};
+
+// timeConversion('01:01:00PM');
