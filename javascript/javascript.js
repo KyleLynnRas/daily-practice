@@ -1090,3 +1090,61 @@ const timeConversion = (s) => {
 };
 
 // timeConversion('01:01:00PM');
+
+//HR test
+function findMedian(arr) {
+	// Write your code here
+	arr = arr.sort();
+	let median = arr.length / 2;
+	median = Math.floor(median);
+	median = arr[median];
+	return median;
+}
+
+findMedian([1, 2, 3, 4, 5]);
+
+//https://www.hackerrank.com/challenges/one-week-preparation-kit-lonely-integer/problem?h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-two
+
+const lonelyInteger = (a) => {
+	a.sort((a, b) => a - b);
+	let answer = 0;
+
+	for (let i = 0; i < a.length; ) {
+		// console.log(a[i])
+		if (a[i] !== a[i + 1]) {
+			answer = a[i];
+			return answer;
+		}
+		i += 2;
+	}
+	return answer;
+};
+
+// console.log(lonelyInteger([
+// 	34, 95, 34, 64, 45, 95, 16, 80, 80, 75, 3, 25, 75, 25, 31, 3, 64, 16, 31,
+// ]));
+
+//https://www.hackerrank.com/challenges/one-week-preparation-kit-diagonal-difference/problem?h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-two&h_r=next-challenge&h_v=zen
+
+const diagonalDifference = (arr) => {
+	let sum1 = 0;
+	let sum2 = 0;
+
+	for (let i = 0; i < arr.length; i++) {
+		sum1 = sum1 + arr[i][i];
+
+		let secondNum = arr[i].length - 1;
+
+		sum2 = sum2 + arr[i][secondNum - i];
+	}
+
+	let diff = sum1 - sum2;
+	diff = Math.abs(diff);
+	return diff;
+};
+
+// diagonalDifference([
+// 	[11, 2, 4],
+// 	[4, 5, 6],
+// 	[10, 8, -12],
+// ]);
