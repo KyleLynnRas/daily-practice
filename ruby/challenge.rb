@@ -64,3 +64,49 @@ def my_sqrt x
 end
 
 # my_sqrt(8)
+
+#https://www.codewars.com/kata/55a2d7ebe362935a210000b2/train/javascript
+
+def smallestIntegerFinder args
+  answer = args.min()
+  answer
+end
+
+# p smallestIntegerFinder([34, -345, -1, 100])
+
+#https://www.codewars.com/kata/58649884a1659ed6cb000072/train/ruby
+
+def update_light(current)
+  if current == "red" 
+    "green"
+  elsif current == "yellow"
+    "red"
+  elsif current == "green"
+    "yellow"
+  end
+end
+
+# p update_light("red")
+
+#https://www.codewars.com/kata/583710ccaa6717322c000105/train/ruby
+
+def simple_multiplication(number)
+  if number.even? == true
+   number * 8
+  else
+    number * 9
+  end
+end
+
+# p simple_multiplication 2
+
+#https://www.codewars.com/kata/57ee99a16c8df7b02d00045f/train/ruby
+
+def flatten_and_sort(array)
+  sorted = array.flatten
+  sorted.sort
+end
+
+# p flatten_and_sort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]])
+
+
