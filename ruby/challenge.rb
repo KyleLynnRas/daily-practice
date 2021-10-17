@@ -109,4 +109,31 @@ end
 
 # p flatten_and_sort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]])
 
+#https://www.codewars.com/kata/5601409514fc93442500010b/train/ruby
 
+def better_than_average(arr, points)
+  avg = arr.sum / arr.length
+  if points > avg
+    true
+  else 
+    false
+  end
+end
+
+# p better_than_average([1,2,3], 4)
+
+#https://www.codewars.com/kata/585a033e3a36cdc50a00011c/train/ruby
+
+def freqSeq(str, sep)
+  strArr = str.split("")
+  tally_hash = strArr.tally
+  # p tally_hash[strArr[0]]
+  answerArr = []
+  for i in 0...strArr.length do
+    val = tally_hash[strArr[i]]
+    answerArr.push(val)
+  end
+  answerArr.join("#{sep}")
+end
+
+# p freqSeq("hello world", "-")
