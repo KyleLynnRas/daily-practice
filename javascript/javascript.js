@@ -1148,3 +1148,27 @@ const diagonalDifference = (arr) => {
 // 	[4, 5, 6],
 // 	[10, 8, -12],
 // ]);
+
+//#https://www.codewars.com/kata/54402d52cf3625b882000141/train/javascript
+
+superSecretChars = [
+	['a', '@'],
+	['s', '$'],
+	['o', '0'],
+	['h', '5'],
+	['x', '*'],
+];
+function createSSP(password) {
+	let passwordArr = password.split('');
+	passwordArr.forEach((ele, idx) => {
+		superSecretChars.forEach((e, i) => {
+			ele = ele.toLowerCase();
+			if (ele === e[0]) {
+				passwordArr.splice(idx, 1, e[1]);
+			}
+		});
+	});
+	return passwordArr.join('');
+}
+
+// console.log(createSSP("haxorpassword"))
