@@ -1172,9 +1172,3 @@ function createSSP(password) {
 }
 
 // console.log(createSSP("haxorpassword"))
-
-// let arr = [2,2,2,2]
-
-// arr = arr.reduce((a, b) => a * 2)
-
-// console.log(arr)
